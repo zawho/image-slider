@@ -1,1 +1,1 @@
-# image-slider
+A module for implementing image sliders.
