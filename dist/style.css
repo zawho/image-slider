@@ -1,0 +1,13 @@
+.slider-container {
+    display: grid;
+    grid-template-columns: min-content 1fr min-content;
+    align-items: center;
+    justify-items: center;
+}
+
+.img-container {
+    max-width: 1000px;
+    min-width: 200px;
+    background-color: green;
+    aspect-ratio: 16 / 9;
+}
