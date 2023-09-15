@@ -26,4 +26,13 @@ body {
     background-color: green;
     aspect-ratio: 16 / 9;
     margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.image {
+    grid-column-start: 1;
+    grid-row-start: 1;
 }
