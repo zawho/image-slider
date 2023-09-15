@@ -1,13 +1,29 @@
+body {
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
 .slider-container {
     display: grid;
-    grid-template-columns: min-content 1fr min-content;
+    grid-template-columns: min-content minmax(200px, 800px) min-content;
     align-items: center;
-    justify-items: center;
+}
+
+.btn-container {
+    justify-self: center;
+}
+
+#back-btn {
+    margin-left: 5px;
+}
+
+#fwd-btn {
+    margin-right: 5px;
 }
 
 .img-container {
-    max-width: 1000px;
-    min-width: 200px;
     background-color: green;
     aspect-ratio: 16 / 9;
+    margin: 5px;
 }
