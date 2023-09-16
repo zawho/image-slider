@@ -37,3 +37,11 @@ body {
     grid-row-start: 1;
     width: 100%;
 }
+
+#img-5 {
+    display: flex;
+}
+
+#img-4, #img-3, #img-2, #img-1 {
+    display: none;
+}

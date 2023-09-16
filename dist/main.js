@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("console.log('hello');\n\n//# sourceURL=webpack://@frogheaven/image-slider/./src/index.js?");
+eval("function nextSlide() {\n    const imgContainer = document.querySelector('.img-container');\n    console.log(Array.from(imgContainer.childNodes));   \n}\n\nfunction setBtnFuncs() {\n    const nextBtn = document.querySelector('#fwd-btn');\n    nextBtn.addEventListener('click', nextSlide);\n}\n\nsetBtnFuncs();\n\n//# sourceURL=webpack://@frogheaven/image-slider/./src/index.js?");
 
 /***/ })
 
