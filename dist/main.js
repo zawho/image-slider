@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("function nextSlide() {\n    const imgContainer = document.querySelector('.img-container');\n    console.log(Array.from(imgContainer.childNodes));   \n}\n\nfunction setBtnFuncs() {\n    const nextBtn = document.querySelector('#fwd-btn');\n    nextBtn.addEventListener('click', nextSlide);\n}\n\nsetBtnFuncs();\n\n//# sourceURL=webpack://@frogheaven/image-slider/./src/index.js?");
+eval("function setImgDisplay() {\n    const imgContainer = document.querySelector('.img-container');\n    const imgArr = Array.from(imgContainer.childNodes);\n    for (let i = 0; i < imgArr.length; i++) {\n        if (i === 0) {\n            imgArr[i].style.display = 'flex';\n        } else {\n            imgArr[i].style.display = 'none';\n        }\n    }\n}\n\nsetImgDisplay();\n\nfunction nextSlide() {\n    const imgContainer = document.querySelector('.img-container');\n    const imgArr = Array.from(imgContainer.childNodes);\n    for (let i = 0; i < imgArr.length; i++) {\n        if (imgArr[i].style.display === 'flex' && !(i === (imgArr.length - 1))) {\n            imgArr[i].style.display = 'none';\n            imgArr[i+=1].style.display = 'flex';\n        } else if (imgArr[i].style.display === 'flex' && i === (imgArr.length - 1)) {\n            imgArr[i].style.display = 'none';\n            imgArr[0].style.display = 'flex';\n        }\n    }\n}\n\nfunction setBtnFuncs() {\n    const nextBtn = document.querySelector('#fwd-btn');\n    nextBtn.addEventListener('click', nextSlide);\n}\n\nsetBtnFuncs();\n\n//# sourceURL=webpack://@frogheaven/image-slider/./src/index.js?");
 
 /***/ })
 
