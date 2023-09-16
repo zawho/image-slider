@@ -35,4 +35,5 @@ body {
 .image {
     grid-column-start: 1;
     grid-row-start: 1;
+    width: 100%;
 }
