@@ -1,11 +1,37 @@
 function setImgDisplay() {
     const imgContainer = document.querySelector('.img-container');
+    const navContainer = document.querySelector('.nav-container');
     const imgArr = Array.from(imgContainer.childNodes);
+    const navArr = Array.from(navContainer.childNodes);
     for (let i = 0; i < imgArr.length; i++) {
         if (i === 0) {
             imgArr[i].style.display = 'flex';
         } else {
             imgArr[i].style.display = 'none';
+        }
+    }
+    for (let i = 0; i < navArr.length; i++) {
+        if (i === 0) {
+            navArr[i].style.backgroundColor = 'green';
+        }
+    }
+}
+
+function highlightNav() {
+    const imgContainer = document.querySelector('.img-container');
+    const navContainer = document.querySelector('.nav-container');
+    const imgArr = Array.from(imgContainer.childNodes);
+    const navArr = Array.from(navContainer.childNodes);
+    let imgIndex;
+    for (let i = 0; i < imgArr.length; i++) {
+        if (imgArr[i].style.display === 'flex') {
+            imgIndex = i;
+        }
+    }
+    for (let i = 0; i < navArr.length; i++) {
+        if (i === imgIndex && i > 0) {
+            navArr[i].style.backgroundColor = 'green';
+            // navArr[i-=1].style.backgroundColor = 'rgb(195, 194, 194)';
         }
     }
 }
@@ -22,6 +48,7 @@ function nextSlide() {
             imgArr[0].style.display = 'flex';
         }
     }
+    highlightNav();
 }
 
 function prevSlide() {
