@@ -27,7 +27,7 @@ function nextSlide() {
 function prevSlide() {
     const imgContainer = document.querySelector('.img-container');
     const imgArr = Array.from(imgContainer.childNodes);
-    for (let i = 0; i < imgArr.length; i++) {
+    for (let i = (imgArr.length - 1); i >= 0; i--) {
         if (imgArr[i].style.display === 'flex' && i > 0) {
             imgArr[i].style.display = 'none';
             imgArr[i-=1].style.display = 'flex';
