@@ -7,6 +7,7 @@ body {
 .slider-container {
     display: grid;
     grid-template-columns: min-content minmax(200px, 800px) min-content;
+    grid-template-rows: 1fr min-content;
     align-items: center;
 }
 
@@ -36,4 +37,20 @@ body {
     grid-column-start: 1;
     grid-row-start: 1;
     width: 100%;
+}
+
+.nav-container {
+    grid-column: 2 / 3;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.nav-node {
+    background-color: rgb(195, 194, 194);
+    border-radius: 50px;
+    height: 15px;
+    width: 15px;
 }
