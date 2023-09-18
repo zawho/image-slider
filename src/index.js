@@ -17,7 +17,7 @@ function setImgDisplay() {
     }
 }
 
-function highlightNav() {
+function nextNav() {
     const imgContainer = document.querySelector('.img-container');
     const navContainer = document.querySelector('.nav-container');
     const imgArr = Array.from(imgContainer.childNodes);
@@ -29,9 +29,12 @@ function highlightNav() {
         }
     }
     for (let i = 0; i < navArr.length; i++) {
-        if (i === imgIndex && i > 0) {
+        if (i === imgIndex && i === 0) {
             navArr[i].style.backgroundColor = 'green';
-            // navArr[i-=1].style.backgroundColor = 'rgb(195, 194, 194)';
+            navArr[navArr.length - 1].style.backgroundColor = 'rgb(195, 194, 194)';
+        } else if (i === imgIndex && i > 0) {
+            navArr[i].style.backgroundColor = 'green';
+            navArr[imgIndex - 1].style.backgroundColor = 'rgb(195, 194, 194)';
         }
     }
 }
@@ -48,7 +51,7 @@ function nextSlide() {
             imgArr[0].style.display = 'flex';
         }
     }
-    highlightNav();
+    nextNav();
 }
 
 function prevSlide() {
