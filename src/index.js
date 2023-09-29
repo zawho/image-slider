@@ -51,8 +51,6 @@ function addLinkEvent() {
     }
 }
 
-addLinkEvent();
-
 function nextNav() {
     const imgContainer = document.querySelector('.img-container');
     const navContainer = document.querySelector('.nav-container');
@@ -97,6 +95,7 @@ function prevNav() {
     }
 }
 
+
 function nextSlide() {
     const imgContainer = document.querySelector('.img-container');
     const imgArr = Array.from(imgContainer.childNodes);
@@ -110,6 +109,10 @@ function nextSlide() {
         }
     }
     nextNav();
+}
+
+function autoChangeSlides() {
+    setInterval(nextSlide, '5000');
 }
 
 function prevSlide() {
@@ -134,5 +137,7 @@ function setBtnFuncs() {
     prevBtn.addEventListener('click', prevSlide);
 }
 
+addLinkEvent();
 setImgDisplay();
 setBtnFuncs();
+autoChangeSlides();
