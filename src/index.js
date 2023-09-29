@@ -17,6 +17,42 @@ function setImgDisplay() {
     }
 }
 
+function linkNav() {
+    const imgContainer = document.querySelector('.img-container');
+    const navContainer = document.querySelector('.nav-container');
+    const imgArr = Array.from(imgContainer.childNodes);
+    const navArr = Array.from(navContainer.childNodes);
+    let navIndex;
+    for (let i = 0; i < navArr.length; i++) {
+        if (navArr[i] === this) {
+            navArr[i].style.backgroundColor = 'green';
+        } else {
+            navArr[i].style.backgroundColor = 'rgb(195, 194, 194)';
+        }
+        if (navArr[i].style.backgroundColor === 'green') {
+            navIndex = i;
+        }
+    }
+    for (let i = 0; i < imgArr.length; i++) {
+        if (imgArr[i].style.display === 'flex') {
+            imgArr[i].style.display = 'none';
+        }
+        if (i === navIndex) {
+            imgArr[i].style.display = 'flex';
+        }
+    }
+}
+
+function addLinkEvent() {
+    const navContainer = document.querySelector('.nav-container');
+    const navArr = Array.from(navContainer.childNodes);
+    for (let i = 0; i < navArr.length; i++) {
+        navArr[i].addEventListener('click', linkNav);
+    }
+}
+
+addLinkEvent();
+
 function nextNav() {
     const imgContainer = document.querySelector('.img-container');
     const navContainer = document.querySelector('.nav-container');
