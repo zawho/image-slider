@@ -1,5 +1,4 @@
 body {
-    margin: 0px;
     display: flex;
     justify-content: center;
 }
@@ -7,14 +6,8 @@ body {
 .slider-container {
     display: grid;
     grid-template-columns: min-content minmax(200px, 800px) min-content;
-    grid-template-rows: 1fr min-content;
     align-items: center;
 }
-
-.btn-container {
-    justify-self: center;
-}
-
 
 #back-btn, #fwd-btn {
    width: 40px;
@@ -30,13 +23,12 @@ body {
 }
 
 .img-container {
+    display: flex;
     background-color: green;
     margin: 5px;
 }
 
 .image {
-    grid-column-start: 1;
-    grid-row-start: 1;
     width: 100%;
 }
 
