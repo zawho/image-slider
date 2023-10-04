@@ -140,4 +140,4 @@ function setBtnFuncs() {
 addLinkEvent();
 setImgDisplay();
 setBtnFuncs();
-autoChangeSlides();
+// autoChangeSlides();
