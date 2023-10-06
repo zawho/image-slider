@@ -25,7 +25,6 @@ body {
 .img-container {
     display: flex;
     justify-content: center;
-    margin: 5px;
 }
 
 .image {
