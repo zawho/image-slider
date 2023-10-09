@@ -1,3 +1,33 @@
+function createSlider() {
+    const body = document.querySelector('body');
+    const sliderContainer = document.createElement('div');
+    const backBtnContainer = document.createElement('div');
+    const backBtn = document.createElement('input');
+    const imgContainer = document.createElement('div');
+    const fwdBtnContainer = document.createElement('div');
+    const fwdBtn = document.createElement('input');
+    const navContainer = document.createElement('div');
+    sliderContainer.className = 'slider-container';
+    backBtnContainer.className = 'btn-container';
+    backBtn.className = 'slider-btn';
+    backBtn.id = 'back-btn';
+    backBtn.src = 'icons/chevron-left.svg';
+    imgContainer.className = 'img-container';
+    fwdBtnContainer.className = 'btn-container';
+    fwdBtn.className = 'slider-btn';
+    fwdBtn.id = 'fwd-btn';
+    navContainer.className = 'nav-container';
+    body.appendChild(sliderContainer);
+    sliderContainer.appendChild(backBtnContainer);
+    backBtnContainer.appendChild(backBtn);
+    sliderContainer.appendChild(imgContainer);
+    sliderContainer.appendChild(fwdBtnContainer);
+    fwdBtnContainer.appendChild(fwdBtn);
+    sliderContainer.appendChild(navContainer);
+}
+
+createSlider();
+
 function setImgDisplay() {
     const imgContainer = document.querySelector('.img-container');
     const navContainer = document.querySelector('.nav-container');
