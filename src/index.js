@@ -16,6 +16,7 @@ function createSlider() {
     fwdBtnContainer.className = 'btn-container';
     fwdBtn.className = 'slider-btn';
     fwdBtn.id = 'fwd-btn';
+    fwdBtn.src = 'icons/chevron-right.svg';
     navContainer.className = 'nav-container';
     body.appendChild(sliderContainer);
     sliderContainer.appendChild(backBtnContainer);
@@ -26,7 +27,20 @@ function createSlider() {
     sliderContainer.appendChild(navContainer);
 }
 
+function createNav() {
+    const navContainer = document.querySelector('.nav-container');
+    const navNodeArr = [];
+    for (let i = 1; i <= 5; i++) {
+        navNodeArr[i] = document.createElement('div');
+        navNodeArr[i].className = 'nav-node';
+        navNodeArr[i].id = `node-${i}`;
+        navContainer.appendChild(navNodeArr[i]);
+    }
+    
+}
+
 createSlider();
+createNav();
 
 function setImgDisplay() {
     const imgContainer = document.querySelector('.img-container');
