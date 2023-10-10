@@ -11,12 +11,14 @@ function createSlider() {
     backBtnContainer.className = 'btn-container';
     backBtn.className = 'slider-btn';
     backBtn.id = 'back-btn';
-    backBtn.src = 'icons/chevron-left.svg';
+    backBtn.type = 'image';
+    backBtn.src = '../src/icons/chevron-left.svg';
     imgContainer.className = 'img-container';
     fwdBtnContainer.className = 'btn-container';
     fwdBtn.className = 'slider-btn';
     fwdBtn.id = 'fwd-btn';
-    fwdBtn.src = 'icons/chevron-right.svg';
+    fwdBtn.type = 'image';
+    fwdBtn.src = '../src/icons/chevron-right.svg';
     navContainer.className = 'nav-container';
     body.appendChild(sliderContainer);
     sliderContainer.appendChild(backBtnContainer);
