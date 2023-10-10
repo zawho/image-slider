@@ -29,18 +29,6 @@ function createSlider() {
     sliderContainer.appendChild(navContainer);
 }
 
-function createNav() {
-    const navContainer = document.querySelector('.nav-container');
-    const navNodeArr = [];
-    for (let i = 1; i <= 5; i++) {
-        navNodeArr[i] = document.createElement('div');
-        navNodeArr[i].className = 'nav-node';
-        navNodeArr[i].id = `node-${i}`;
-        navContainer.appendChild(navNodeArr[i]);
-    }
-    
-}
-
 function addImages() {
     const imgContainer = document.querySelector(".img-container");
     const imgArr = [];
@@ -54,9 +42,19 @@ function addImages() {
     }
 }
 
-createSlider();
-addImages();
-createNav();
+function createNav() {
+    const navContainer = document.querySelector('.nav-container');
+    const imgContainer = document.querySelector('.img-container');
+    const imgArr = Array.from(imgContainer.childNodes);
+    const navNodeArr = [];
+    for (let i = 1; i <= imgArr.length; i++) {
+        navNodeArr[i] = document.createElement('div');
+        navNodeArr[i].className = 'nav-node';
+        navNodeArr[i].id = `node-${i}`;
+        navContainer.appendChild(navNodeArr[i]);
+    }
+}
+
 
 function setImgDisplay() {
     const imgContainer = document.querySelector('.img-container');
@@ -197,6 +195,9 @@ function setBtnFuncs() {
     prevBtn.addEventListener('click', prevSlide);
 }
 
+createSlider();
+addImages();
+createNav();
 addLinkEvent();
 setImgDisplay();
 setBtnFuncs();
