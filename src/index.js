@@ -41,7 +41,21 @@ function createNav() {
     
 }
 
+function addImages() {
+    const imgContainer = document.querySelector(".img-container");
+    const imgArr = [];
+    for (let i = 1; i <= 5; i++) {
+        imgArr[i] = document.createElement('img');
+        imgArr[i].className = 'image';
+        imgArr[i].id = `img-${i}`;
+        imgArr[i].src = `../src/pics/landscape-${i}.jpg`;
+        imgArr[i].alt = `Example landscape image ${i}`;
+        imgContainer.appendChild(imgArr[i]);
+    }
+}
+
 createSlider();
+addImages();
 createNav();
 
 function setImgDisplay() {
