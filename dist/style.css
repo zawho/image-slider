@@ -1,27 +1,3 @@
-.slider-container {
-    display: grid;
-    grid-template-columns: min-content min-content min-content;
-    align-items: center;
-}
-
-#back-btn, #fwd-btn {
-   width: 40px;
-   opacity: 0.3;
-}
-
-#back-btn {
-    margin-left: 5px;
-}
-
-#fwd-btn {
-    margin-right: 5px;
-}
-
-.img-container {
-    display: flex;
-    justify-content: center;
-}
-
 .image {
     width: 400px;
     height: 300px;

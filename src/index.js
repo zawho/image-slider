@@ -195,6 +195,30 @@ function autoChangeSlides() {
     setInterval(nextSlide, '5000');
 }
 
+function styleSlider() {
+    const sliderContainer = document.querySelector('.slider-container');
+    sliderContainer.style.display = 'grid';
+    sliderContainer.style.gridTemplateColumns = 'repeat(3, min-content)';
+    sliderContainer.style.alignItems = 'center';
+}
+
+function styleButtons() {
+    const backBtn = document.querySelector('#back-btn');
+    const fwdBtn = document.querySelector('#fwd-btn');
+    backBtn.style.width = '40px';
+    backBtn.style.opacity = '0.3';
+    backBtn.style.marginLeft = '5px';
+    fwdBtn.style.width = '40px';
+    fwdBtn.style.opacity = '0.3';
+    fwdBtn.style.marginRight = '5px';
+}
+
+function styleImgContainer() {
+    const imgContainer = document.querySelector('.img-container');
+    imgContainer.style.display = 'flex';
+    imgContainer.style.justifyContent = 'center';
+}
+
 createSlider();
 addImages();
 createNav();
@@ -202,3 +226,7 @@ addLinkEvent();
 setImgDisplay();
 setBtnFuncs();
 // autoChangeSlides();
+
+styleSlider();
+styleButtons();
+styleImgContainer();
