@@ -32,7 +32,7 @@ function createSlider() {
 function addImages() {
     const imgContainer = document.querySelector(".img-container");
     const imgArr = [];
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 0; i <= 4; i++) {
         imgArr[i] = document.createElement('img');
         imgArr[i].className = 'image';
         imgArr[i].id = `img-${i}`;
@@ -47,7 +47,7 @@ function createNav() {
     const imgContainer = document.querySelector('.img-container');
     const imgArr = Array.from(imgContainer.childNodes);
     const navNodeArr = [];
-    for (let i = 1; i <= imgArr.length; i++) {
+    for (let i = 0; i < imgArr.length; i++) {
         navNodeArr[i] = document.createElement('div');
         navNodeArr[i].className = 'nav-node';
         navNodeArr[i].id = `node-${i}`;
@@ -169,10 +169,6 @@ function nextSlide() {
     nextNav();
 }
 
-function autoChangeSlides() {
-    setInterval(nextSlide, '5000');
-}
-
 function prevSlide() {
     const imgContainer = document.querySelector('.img-container');
     const imgArr = Array.from(imgContainer.childNodes);
@@ -193,6 +189,10 @@ function setBtnFuncs() {
     const prevBtn = document.querySelector('#back-btn');
     nextBtn.addEventListener('click', nextSlide);
     prevBtn.addEventListener('click', prevSlide);
+}
+
+function autoChangeSlides() {
+    setInterval(nextSlide, '5000');
 }
 
 createSlider();
