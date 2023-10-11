@@ -219,15 +219,25 @@ function styleImgContainer() {
     imgContainer.style.justifyContent = 'center';
 }
 
-function styleImages() {
+function test(y) {
     const imgContainer = document.querySelector('.img-container');
     const imgArr = Array.from(imgContainer.childNodes);
     for (let i = 0; i < imgArr.length; i++) {
-        imgArr[i].style.width = '400px';
-        imgArr[i].style.height = '300px';
         imgArr[i].style.objectFit = 'contain';
     }
+    if (y.matches) {
+        for (let i = 0; i < imgArr.length; i++) {
+            imgArr[i].style.width = '300px';
+            imgArr[i].style.height = '200px';
+        }
+    } else {
+        for (let i = 0; i < imgArr.length; i++) {
+            imgArr[i].style.width = '400px';
+            imgArr[i].style.height = '300px';
+        }
+    }
 }
+const y = window.matchMedia('(max-width: 500px)');
 
 createSlider();
 addImages();
@@ -240,4 +250,5 @@ setBtnFuncs();
 styleSlider();
 styleButtons();
 styleImgContainer();
-styleImages();
+test(y);
+y.addEventListener('change', test);
