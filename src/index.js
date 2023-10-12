@@ -249,6 +249,27 @@ function setImgResize() {
     screen500.addEventListener('change', styleImages);
 }
 
+function styleNavContainer() {
+    const navContainer = document.querySelector('.nav-container');
+    navContainer.style.gridColumn = '2 / 3';
+    navContainer.style.display = 'grid';
+    navContainer.style.justifyItems = 'center';
+    navContainer.style.gridTemplateColumns = 'repeat(5, 1fr)';
+    navContainer.style.marginTop = '5px';
+}
+
+function stlyeNavNodes() {
+    const navContainer = document.querySelector('.nav-container');
+    const navArr = Array.from(navContainer.childNodes);
+    for (let i = 0; i < navArr.length; i++) {
+        if (i > 0) {
+            navArr[i].style.backgroundColor = 'rgb(195, 194, 194)';
+        }
+        navArr[i].style.borderRadius = '50px';
+        navArr[i].style.height = '15px';
+        navArr[i].style.width = '15px';
+    }
+}
 
 
 createSlider();
@@ -263,3 +284,5 @@ styleSlider();
 styleButtons();
 styleImgContainer();
 setImgResize();
+styleNavContainer();
+stlyeNavNodes();
