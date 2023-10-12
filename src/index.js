@@ -258,7 +258,7 @@ function styleNavContainer() {
     navContainer.style.marginTop = '5px';
 }
 
-function stlyeNavNodes() {
+function styleNavNodes() {
     const navContainer = document.querySelector('.nav-container');
     const navArr = Array.from(navContainer.childNodes);
     for (let i = 0; i < navArr.length; i++) {
@@ -272,17 +272,22 @@ function stlyeNavNodes() {
 }
 
 
-createSlider();
-addImages();
-createNav();
-addLinkEvent();
-setImgDisplay();
-setBtnFuncs();
+// createSlider();
+// addImages();
+// createNav();
+// addLinkEvent();
+// setImgDisplay();
+// setBtnFuncs();
 // autoChangeSlides();
 
-styleSlider();
-styleButtons();
-styleImgContainer();
-setImgResize();
-styleNavContainer();
-stlyeNavNodes();
+// styleSlider();
+// styleButtons();
+// styleImgContainer();
+// setImgResize();
+// styleNavContainer();
+// stlyeNavNodes();
+
+export { createSlider, addImages, createNav, addLinkEvent,
+        setImgDisplay, setBtnFuncs, autoChangeSlides, styleSlider,
+        styleButtons, styleImgContainer, setImgResize, 
+        styleNavContainer, styleNavNodes };
