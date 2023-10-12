@@ -219,25 +219,37 @@ function styleImgContainer() {
     imgContainer.style.justifyContent = 'center';
 }
 
-function test(y) {
+function setdefaultImgSize(imgArr) {
+    const arrVar = imgArr;
+    for (let i = 0; i < imgArr.length; i++) {
+        arrVar[i].style.width = '400px';
+        arrVar[i].style.height = '300px';
+    }
+}
+
+function styleImages(screen500) {
     const imgContainer = document.querySelector('.img-container');
     const imgArr = Array.from(imgContainer.childNodes);
     for (let i = 0; i < imgArr.length; i++) {
         imgArr[i].style.objectFit = 'contain';
     }
-    if (y.matches) {
+    if (screen500.matches) {
         for (let i = 0; i < imgArr.length; i++) {
-            imgArr[i].style.width = '300px';
-            imgArr[i].style.height = '200px';
+            imgArr[i].style.width = '250px';
+            imgArr[i].style.height = '150px';
         }
     } else {
-        for (let i = 0; i < imgArr.length; i++) {
-            imgArr[i].style.width = '400px';
-            imgArr[i].style.height = '300px';
-        }
+        setdefaultImgSize(imgArr);
     }
 }
-const y = window.matchMedia('(max-width: 500px)');
+
+function setImgResize() {
+    const screen500 = window.matchMedia('(max-width: 500px)');
+    styleImages(screen500);
+    screen500.addEventListener('change', styleImages);
+}
+
+
 
 createSlider();
 addImages();
@@ -250,5 +262,4 @@ setBtnFuncs();
 styleSlider();
 styleButtons();
 styleImgContainer();
-test(y);
-y.addEventListener('change', test);
+setImgResize();

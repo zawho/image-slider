@@ -13,10 +13,3 @@
     height: 15px;
     width: 15px;
 }
-
-@media only screen and (max-width: 400px) {
-    .image{
-        width: 250px;
-        height: 150px;
-    }
-}
