@@ -12,13 +12,13 @@ function createSlider() {
     backBtn.className = 'slider-btn';
     backBtn.id = 'back-btn';
     backBtn.type = 'image';
-    backBtn.src = '../src/icons/chevron-left.svg';
+    backBtn.src = '../node_modules/@frogheaven/image-slider/src/icons/chevron-left.svg';
     imgContainer.className = 'img-container';
     fwdBtnContainer.className = 'btn-container';
     fwdBtn.className = 'slider-btn';
     fwdBtn.id = 'fwd-btn';
     fwdBtn.type = 'image';
-    fwdBtn.src = '../src/icons/chevron-right.svg';
+    fwdBtn.src = '../node_modules/@frogheaven/image-slider/src/icons/chevron-right.svg';
     navContainer.className = 'nav-container';
     body.appendChild(sliderContainer);
     sliderContainer.appendChild(backBtnContainer);
@@ -36,7 +36,7 @@ function addImages() {
         imgArr[i] = document.createElement('img');
         imgArr[i].className = 'image';
         imgArr[i].id = `img-${i}`;
-        imgArr[i].src = `../src/pics/landscape-${i}.jpg`;
+        imgArr[i].src = `../node_modules/@frogheaven/image-slider/src/pics/landscape-${i}.jpg`;
         imgArr[i].alt = `Example landscape image ${i}`;
         imgContainer.appendChild(imgArr[i]);
     }
@@ -271,23 +271,16 @@ function styleNavNodes() {
     }
 }
 
-
-// createSlider();
-// addImages();
-// createNav();
-// addLinkEvent();
-// setImgDisplay();
-// setBtnFuncs();
-// autoChangeSlides();
-
-// styleSlider();
-// styleButtons();
-// styleImgContainer();
-// setImgResize();
-// styleNavContainer();
-// stlyeNavNodes();
+function styleAll() {
+    styleSlider();
+    styleButtons();
+    styleImgContainer();
+    setImgResize();
+    styleNavContainer();
+    styleNavNodes();  
+}
 
 export { createSlider, addImages, createNav, addLinkEvent,
         setImgDisplay, setBtnFuncs, autoChangeSlides, styleSlider,
         styleButtons, styleImgContainer, setImgResize, 
-        styleNavContainer, styleNavNodes };
+        styleNavContainer, styleNavNodes, styleAll };
